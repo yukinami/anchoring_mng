@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Type</th>
+    <th>Category</th>
     <th>Ship name</th>
     <th>Ship name en</th>
     <th>Country</th>
@@ -13,7 +13,7 @@
     <th>Nt</th>
     <th>Max draft</th>
     <th>Power</th>
-    <th>Ahchor reason</th>
+    <th>Anchor reason</th>
     <th>Anchor date</th>
     <th>Sail date</th>
     <th>Pier</th>
@@ -28,7 +28,7 @@
 
 <% @anchorings.each do |anchoring| %>
   <tr>
-    <td><%= anchoring.type %></td>
+    <td><%= anchoring.category %></td>
     <td><%= anchoring.ship_name %></td>
     <td><%= anchoring.ship_name_en %></td>
     <td><%= anchoring.country %></td>
@@ -39,7 +39,7 @@
     <td><%= anchoring.nt %></td>
     <td><%= anchoring.max_draft %></td>
     <td><%= anchoring.power %></td>
-    <td><%= anchoring.ahchor_reason %></td>
+    <td><%= anchoring.anchor_reason %></td>
     <td><%= anchoring.anchor_date %></td>
     <td><%= anchoring.sail_date %></td>
     <td><%= anchoring.pier %></td>

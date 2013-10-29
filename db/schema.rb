@@ -11,23 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131029055123) do
+ActiveRecord::Schema.define(:version => 20131029071605) do
 
   create_table "anchorings", :force => true do |t|
-    t.string   "type"
+    t.string   "category"
     t.string   "ship_name"
     t.string   "ship_name_en"
     t.string   "country"
     t.integer  "ship_length"
     t.string   "cargo"
     t.integer  "amount"
-    t.integer  "gt"
-    t.integer  "nt"
+    t.string   "gt"
+    t.string   "nt"
     t.integer  "max_draft"
     t.integer  "power"
-    t.string   "ahchor_reason"
-    t.date     "anchor_date"
-    t.date     "sail_date"
+    t.string   "anchor_reason"
+    t.datetime "anchor_date"
+    t.datetime "sail_date"
     t.string   "pier"
     t.string   "ship_contact"
     t.string   "contacter"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20131029055123) do
     t.string   "fax"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "status"
   end
 
 end

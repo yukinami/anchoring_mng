@@ -12,7 +12,7 @@ class CreateAnchorings < ActiveRecord::Migration
       t.integer :nt
       t.integer :max_draft
       t.integer :power
-      t.string :ahchor_reason
+      t.string :anchor_reason
       t.date :anchor_date
       t.date :sail_date
       t.string :pier
