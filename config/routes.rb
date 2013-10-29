@@ -1,11 +1,9 @@
 AnchoringMng::Application.routes.draw do
-  get "anchorage_grounds/index_anchorings" do
+  resources :anchorage_grounds do
     collection do
       get 'index_anchorings'
     end
   end
-
-  resources :anchorage_grounds
 
 
   get "anchoring_mng/index"
