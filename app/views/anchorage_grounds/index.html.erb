@@ -1,0 +1,23 @@
+<h1>Listing anchorage_grounds</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @anchorage_grounds.each do |anchorage_ground| %>
+  <tr>
+    <td><%= anchorage_ground.name %></td>
+    <td><%= link_to 'Show', anchorage_ground %></td>
+    <td><%= link_to 'Edit', edit_anchorage_ground_path(anchorage_ground) %></td>
+    <td><%= link_to 'Destroy', anchorage_ground, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Anchorage ground', new_anchorage_ground_path %>

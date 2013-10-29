@@ -1,0 +1,10 @@
+<h1>Anchoring Applies</h1>
+
+<table>
+  <% @anchorings.each do |anchoring| %>
+    <tr>
+      <td><%= link_to anchoring.ship_name, anchoring_path(anchoring) %></td>
+    </tr>
+  <% end %>
+</table>
+
