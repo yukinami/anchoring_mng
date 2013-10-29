@@ -1,0 +1,93 @@
+<%= form_for(@anchoring) do |f| %>
+  <% if @anchoring.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@anchoring.errors.count, "error") %> prohibited this anchoring from being saved:</h2>
+
+      <ul>
+      <% @anchoring.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :ship_name %><br />
+    <%= f.text_field :ship_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ship_name_en %><br />
+    <%= f.text_field :ship_name_en %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :ship_length %><br />
+    <%= f.number_field :ship_length %>
+  </div>
+  <div class="field">
+    <%= f.label :cargo %><br />
+    <%= f.text_field :cargo %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br />
+    <%= f.number_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :gt %><br />
+    <%= f.number_field :gt %>
+  </div>
+  <div class="field">
+    <%= f.label :nt %><br />
+    <%= f.number_field :nt %>
+  </div>
+  <div class="field">
+    <%= f.label :max_draft %><br />
+    <%= f.number_field :max_draft %>
+  </div>
+  <div class="field">
+    <%= f.label :power %><br />
+    <%= f.number_field :power %>
+  </div>
+  <div class="field">
+    <%= f.label :ahchor_reason %><br />
+    <%= f.text_field :ahchor_reason %>
+  </div>
+  <div class="field">
+    <%= f.label :anchor_date %><br />
+    <%= f.date_select :anchor_date %>
+  </div>
+  <div class="field">
+    <%= f.label :sail_date %><br />
+    <%= f.date_select :sail_date %>
+  </div>
+  <div class="field">
+    <%= f.label :pier %><br />
+    <%= f.text_field :pier %>
+  </div>
+  <div class="field">
+    <%= f.label :ship_contact %><br />
+    <%= f.text_field :ship_contact %>
+  </div>
+  <div class="field">
+    <%= f.label :contacter %><br />
+    <%= f.text_field :contacter %>
+  </div>
+  <div class="field">
+    <%= f.label :cellphone %><br />
+    <%= f.text_field :cellphone %>
+  </div>
+  <div class="field">
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

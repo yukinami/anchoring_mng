@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  ship_name: MyString
+  ship_name_en: MyString
+  country: MyString
+  ship_length: 1
+  cargo: MyString
+  amount: 1
+  gt: 1
+  nt: 1
+  max_draft: 1
+  power: 1
+  ahchor_reason: MyString
+  anchor_date: 2013-10-29
+  sail_date: 2013-10-29
+  pier: MyString
+  ship_contact: MyString
+  contacter: MyString
+  cellphone: MyString
+  fax: MyString
+
+two:
+  type: 
+  ship_name: MyString
+  ship_name_en: MyString
+  country: MyString
+  ship_length: 1
+  cargo: MyString
+  amount: 1
+  gt: 1
+  nt: 1
+  max_draft: 1
+  power: 1
+  ahchor_reason: MyString
+  anchor_date: 2013-10-29
+  sail_date: 2013-10-29
+  pier: MyString
+  ship_contact: MyString
+  contacter: MyString
+  cellphone: MyString
+  fax: MyString

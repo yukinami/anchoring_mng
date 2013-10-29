@@ -1,0 +1,59 @@
+<h1>Listing anchorings</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Ship name</th>
+    <th>Ship name en</th>
+    <th>Country</th>
+    <th>Ship length</th>
+    <th>Cargo</th>
+    <th>Amount</th>
+    <th>Gt</th>
+    <th>Nt</th>
+    <th>Max draft</th>
+    <th>Power</th>
+    <th>Ahchor reason</th>
+    <th>Anchor date</th>
+    <th>Sail date</th>
+    <th>Pier</th>
+    <th>Ship contact</th>
+    <th>Contacter</th>
+    <th>Cellphone</th>
+    <th>Fax</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @anchorings.each do |anchoring| %>
+  <tr>
+    <td><%= anchoring.type %></td>
+    <td><%= anchoring.ship_name %></td>
+    <td><%= anchoring.ship_name_en %></td>
+    <td><%= anchoring.country %></td>
+    <td><%= anchoring.ship_length %></td>
+    <td><%= anchoring.cargo %></td>
+    <td><%= anchoring.amount %></td>
+    <td><%= anchoring.gt %></td>
+    <td><%= anchoring.nt %></td>
+    <td><%= anchoring.max_draft %></td>
+    <td><%= anchoring.power %></td>
+    <td><%= anchoring.ahchor_reason %></td>
+    <td><%= anchoring.anchor_date %></td>
+    <td><%= anchoring.sail_date %></td>
+    <td><%= anchoring.pier %></td>
+    <td><%= anchoring.ship_contact %></td>
+    <td><%= anchoring.contacter %></td>
+    <td><%= anchoring.cellphone %></td>
+    <td><%= anchoring.fax %></td>
+    <td><%= link_to 'Show', anchoring %></td>
+    <td><%= link_to 'Edit', edit_anchoring_path(anchoring) %></td>
+    <td><%= link_to 'Destroy', anchoring, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Anchoring', new_anchoring_path %>
