@@ -80,4 +80,15 @@ class AnchoringsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def confirm
+    @anchoring = Anchoring.find(params[:id])
+    @anchoring.update_attributes(status: 'confirmed')
+    
+    respond_to do |format|
+      format.html { redirect_to @anchoring, notice: 'Anchoring was confirmed.'}
+      format.json { head :no_comment }
+    end
+  end
+
 end

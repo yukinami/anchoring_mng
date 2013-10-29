@@ -71,8 +71,7 @@
 </p>
 
 <p>
-  <b>Pier:</b>
-  <%= @anchoring.pier %>
+  <b>Pier:</b> <%= @anchoring.pier %>
 </p>
 
 <p>
@@ -96,5 +95,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_anchoring_path(@anchoring) %> |
 <%= link_to 'Back', anchorings_path %>
+<%= link_to 'Confirm', confirm_anchoring_path(@anchoring)  %>

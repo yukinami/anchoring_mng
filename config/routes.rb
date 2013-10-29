@@ -1,8 +1,11 @@
 AnchoringMng::Application.routes.draw do
   get "anchoring_mng/index"
 
-  resources :anchorings
-
+  resources :anchorings do
+    member do
+      get 'confirm'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
