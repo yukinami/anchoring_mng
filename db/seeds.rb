@@ -22,3 +22,8 @@ Anchoring.create(:ship_name => '新华',
 		  :ship_contact => '13705019360',
 		  :contacter => '殷浩',
 		  :cellphone => '13222898222')
+
+AnchorageGround.delete_all
+
+AnchorageGround.create(:name => '锚地1')
+AnchorageGround.create(:name => '锚地2')
