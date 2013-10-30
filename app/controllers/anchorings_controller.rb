@@ -102,7 +102,7 @@ class AnchoringsController < ApplicationController
     @anchoring.update_attributes(status: 'confirmed')
     
     respond_to do |format|
-      format.html { redirect_to @anchoring, notice: 'Anchoring was confirmed.'}
+      format.html { redirect_to index_anchorings_anchorage_grounds_path, notice: 'Anchoring was confirmed.'}
       format.json { head :no_comment }
     end
   end

@@ -8,6 +8,12 @@
 </head>
 <body>
 
+  <ul>
+    <li><%= link_to "anchoring applies", root_path %></li>
+    <li><%= link_to "anchorage ground", index_anchorings_anchorage_grounds_path %></li>
+    <li><%= link_to "anchoring history", controller: "anchoring_mng", action: "history", id: @anchoring %></li>
+  </ul>
+
 <%= yield %>
 
 </body>
