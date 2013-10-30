@@ -1,2 +1,29 @@
-<h1>AnchorageGrounds#index_anchorings</h1>
-<p>Find me in app/views/anchorage_grounds/index_anchorings.html.erb</p>
+<h1>AnchorageGrounds</h1>
+<% @anchorage_grounds.each do |anchorage_ground| %>
+<div>
+  <h2><%= anchorage_ground.name %></h2>
+
+  <div>
+    <h3>Anchor</h3>
+    <table>
+      <% anchorage_ground.anchorings.confirmed.each do |anchoring| %>
+      <tr>
+	<td><%= anchoring.ship_name %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+
+  <div>
+    <h3>Sail</h3>
+    <table>
+      <% anchorage_ground.anchorings.anchored.each do |anchoring| %>
+      <tr>
+	<td><%= anchoring.ship_name %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+
+</div>
+<% end %>

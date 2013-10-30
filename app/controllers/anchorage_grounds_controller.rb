@@ -81,7 +81,7 @@ class AnchorageGroundsController < ApplicationController
     end
   end
 
-  def index_anchoring
+  def index_anchorings
     @anchorage_grounds = AnchorageGround.all
 
     respond_to do |format|
