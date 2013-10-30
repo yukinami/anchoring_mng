@@ -7,10 +7,13 @@ AnchoringMng::Application.routes.draw do
 
 
   get "anchoring_mng/index"
+  get "anchoring_mng/history"
 
   resources :anchorings do
     member do
       get 'confirm'
+      get 'history'
+      put 'anchor_sail'
     end
   end
 

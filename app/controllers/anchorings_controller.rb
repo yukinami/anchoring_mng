@@ -21,6 +21,17 @@ class AnchoringsController < ApplicationController
     end
   end
 
+  # GET /anchorings/1
+  # GET /anchorings/1.json
+  def history 
+    @anchoring = Anchoring.find(params[:id])
+
+    respond_to do |format|
+      format.html # history.html.erb
+      format.json { render json: @anchoring }
+    end
+  end
+
   # GET /anchorings/new
   # GET /anchorings/new.json
   def new
@@ -35,6 +46,11 @@ class AnchoringsController < ApplicationController
   # GET /anchorings/1/edit
   def edit
     @anchoring = Anchoring.find(params[:id])
+    
+    if @anchoring.status != nil
+      render 'edit_anchor_sail'
+    end
+
   end
 
   # POST /anchorings
@@ -89,6 +105,28 @@ class AnchoringsController < ApplicationController
       format.html { redirect_to @anchoring, notice: 'Anchoring was confirmed.'}
       format.json { head :no_comment }
     end
+  end
+
+  def anchor_sail
+    @anchoring = Anchoring.find(params[:id])
+
+    if @anchoring.status == 'confirmed'
+      @anchoring.actual_anchor_date = params[:actual_anchor_date]
+      @anchoring.status = 'anchored'
+      notice = 'anchor datetime has been updated'
+    elsif @anchoring.status == 'anchored'
+      @anchoring.actual_sail_date= params[:actual_sail_date]
+      @anchoring.status = 'sailed'
+      notice = 'sail datetime has been updated'
+    end
+
+    @anchoring.save
+
+    respond_to do |format|
+      format.html { redirect_to index_anchorings_anchorage_grounds_path, notice: notice }
+      format.json { head :no_comment }
+    end
+
   end
 
 end

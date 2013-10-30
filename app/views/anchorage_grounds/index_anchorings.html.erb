@@ -8,7 +8,7 @@
     <table>
       <% anchorage_ground.anchorings.confirmed.each do |anchoring| %>
       <tr>
-	<td><%= anchoring.ship_name %></td>
+	<td><%= link_to anchoring.ship_name, edit_anchoring_path(anchoring) %></td>
       </tr>
       <% end %>
     </table>
@@ -19,7 +19,7 @@
     <table>
       <% anchorage_ground.anchorings.anchored.each do |anchoring| %>
       <tr>
-	<td><%= anchoring.ship_name %></td>
+	<td><%= link_to anchoring.ship_name, edit_anchoring_path(anchoring) %></td>
       </tr>
       <% end %>
     </table>

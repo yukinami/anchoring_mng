@@ -2,5 +2,4 @@
 
 <%= render :partial => "anchoring", :object => @anchoring %>
 
-<%= link_to 'Back', root_path %>
-<%= link_to 'Confirm', confirm_anchoring_path(@anchoring)  %>
+<%= link_to 'Back', controller: "anchoring_mng", action: "history", id: @anchoring %>

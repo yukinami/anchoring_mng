@@ -1,0 +1,22 @@
+<%= render :partial => "anchoring", :object => @anchoring %> 
+
+<%= form_for @anchoring, url: anchor_sail_anchoring_path do |f| %>
+  <p>
+  <%= f.label :actual_anchor_date %>
+
+  <% if @anchoring.status == 'confirmed' %>
+  <%= f.datetime_select :actual_anchor_date %>
+  <% else %>
+  <%= f.datetime_select :actual_anchor_date, disabled: 'disabled' %>
+  <% end %>
+  </p>
+
+  <% if @anchoring.status == 'anchored' %>
+  <p>
+  <%= f.label :actual_sail_date %>
+  <%= f.datetime_select :actual_sail_date %>
+  </p>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
