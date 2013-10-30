@@ -1,4 +1,7 @@
 AnchoringMng::Application.routes.draw do
+  resources :users
+
+
   resources :anchorage_grounds do
     collection do
       get 'index_anchorings'

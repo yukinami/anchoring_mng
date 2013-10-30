@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131030051909) do
+ActiveRecord::Schema.define(:version => 20131030080624) do
 
   create_table "anchorage_grounds", :force => true do |t|
     t.string   "name"
@@ -45,6 +45,14 @@ ActiveRecord::Schema.define(:version => 20131030051909) do
     t.integer  "anchorage_ground_id"
     t.datetime "actual_anchor_date"
     t.datetime "actual_sail_date"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "hashed_password"
+    t.string   "salt"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end
