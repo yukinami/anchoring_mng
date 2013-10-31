@@ -1,4 +1,6 @@
 class AnchoringsController < ApplicationController
+  before_filter :admin_permission, except: [:show, :confirm, :anchor_sail]
+
   # GET /anchorings
   # GET /anchorings.json
   def index
