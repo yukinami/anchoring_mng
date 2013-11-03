@@ -41,3 +41,6 @@ confirmed_anchoring = Anchoring.create(:ship_name => '兴中',
 AnchorageGround.delete_all
 AnchorageGround.create(:name => '锚地1').anchorings<<(confirmed_anchoring)
 AnchorageGround.create(:name => '锚地2')
+
+User.delete_all
+User.create(:name => 'admin', :password => 'admin', :password_confirmation => 'admin')

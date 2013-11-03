@@ -6,8 +6,12 @@ AnchoringMng::Application.routes.draw do
     delete 'logout' => :destroy
   end
 
-  resources :users
+  controller :anchoring_mng do
+    get 'index' => :index
+    get 'history' => :history
+  end
 
+  resources :users
 
   resources :anchorage_grounds do
     collection do
@@ -15,9 +19,6 @@ AnchoringMng::Application.routes.draw do
     end
   end
 
-
-  get "anchoring_mng/index"
-  get "anchoring_mng/history"
 
   resources :anchorings do
     member do

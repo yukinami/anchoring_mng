@@ -1,29 +1,24 @@
-<div class="depot_form">
-  <% if flash[:alert] %>
-    <p id="notice"><%= flash[:alert] %></p>
-  <% end %>
-
-  <%= form_tag do %>
-    <fieldset>
-      <legend>Please Log In</legend>
-
-      <div>
-	<label for="name">Name:</label>
-	<%= text_field_tag :name, flash[:name] %>
-      </div>
-
-      <div>
-	<label for="password">Password:</label>
-	<%= password_field_tag :password %>
-      </div>
-
-      <div>
-	<%= submit_tag "Login" %>
-      </div>
-
-    </fieldset>
-
-  <% end %>
-
-</div>
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AnchoringMng</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "signin", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <% if flash[:alert] %>
+      <p id="notice"><%= flash[:alert] %></p>
+    <% end %>
+  
+    <%= form_tag login_path, :class=> "form-signin" do %>
+      <h2 class="form-signin-heading">Please sign in</h2>
+      <%= text_field_tag :name, flash[:name], class: 'form-control', placeholder: 'Username', required: true, autofocus: true %>
+      <%= password_field_tag :password, nil, class: 'form-control' , placeholder: 'Password', required: true %>
+      <%= button_tag "Sign In", class: "btn btn-lg btn-primary btn-block", type: "submit" %>
+    <% end %>
+  </div>
+</body>
+</html>

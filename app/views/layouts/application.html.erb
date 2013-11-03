@@ -7,12 +7,32 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <ul>
-    <li><%= link_to "anchoring applies", root_path %></li>
-    <li><%= link_to "anchorage ground", index_anchorings_anchorage_grounds_path %></li>
-    <li><%= link_to "anchoring history", controller: "anchoring_mng", action: "history", id: @anchoring %></li>
-  </ul>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Anchoring Manage</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+	    <li <% if current_page?(root_path) %>class="active"<% end %> ><%= link_to "Applies", root_path %></li>
+            <li <% if current_page?(index_anchorings_anchorage_grounds_path) %>class="active"<% end %> ><%= link_to "Anchorage Ground", index_anchorings_anchorage_grounds_path %></li>
+	    <li <% if current_page?(history_path) %>class="active"<% end %> ><%= link_to "History", history_path %></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+	    <% if session[:user_id] != nil %>
+	    <li><%= button_to "Log Out", logout_path, :method => 'delete', :class => "btn btn-default navbar-btn" %>
+	    <% else %>
+	    <li><%= button_to "Sign In", login_path, :method => 'get', :class => "btn btn-default navbar-btn" %>
+	    <% end %>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
 <%= yield %>
 
