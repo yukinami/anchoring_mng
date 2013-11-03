@@ -1,29 +1,55 @@
-<h1>Anchorage Grounds</h1>
-<% @anchorage_grounds.each do |anchorage_ground| %>
-<div>
+<% content_for :header do %>
+  <h1>Anchorage Grounds</h1>
+<% end %>
+
+<% @anchorage_grounds.each_with_index do |anchorage_ground, i| %>
+<div class="anchorage_ground">
   <h2><%= anchorage_ground.name %></h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#anchor<%= i%>">Anchor</a></li>
+    <li><a href="#sail<%= i%>">Sail</a></li>
+  </ul>
 
-  <div>
-    <h3>Anchor</h3>
-    <table>
-      <% anchorage_ground.anchorings.confirmed.each do |anchoring| %>
-      <tr>
-	<td><%= link_to anchoring.ship_name, edit_anchoring_path(anchoring) %></td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
+  <div class="tab-content">
+    <div id="anchor<%= i%>" class="tab-pane fade active in">
+      <table class="table table-hover">
+	<thead>
+  	  <tr>
+  	    <th>#</th>
+  	    <th>Ship Name</th>
+  	  </tr>
+  	</thead>
 
-  <div>
-    <h3>Sail</h3>
-    <table>
-      <% anchorage_ground.anchorings.anchored.each do |anchoring| %>
-      <tr>
-	<td><%= link_to anchoring.ship_name, edit_anchoring_path(anchoring) %></td>
-      </tr>
-      <% end %>
-    </table>
-  </div>
+	<tbody>
+        <% anchorage_ground.anchorings.confirmed.each_with_index do |anchoring, i| %>
+	  <tr>
+	    <td><%= i+1 %>
+	    <td><%= link_to anchoring.ship_name, edit_anchoring_path(anchoring) %></td>
+          </tr>
+        <% end %>
+	</tbody>
+      </table>
+    </div>
 
+    <div id="sail<%= i%>" class="tab-pane fade in">
+      <table class="table table-hover">
+	<thead>
+  	  <tr>
+  	    <th>#</th>
+  	    <th>Ship Name</th>
+  	  </tr>
+  	</thead>
+
+	<tbody>
+        <% anchorage_ground.anchorings.anchored.each_with_index do |anchoring, i| %>
+	  <tr>
+	    <td><%= i+1 %>
+	    <td><%= link_to anchoring.ship_name, edit_anchoring_path(anchoring) %></td>
+          </tr>
+        <% end %>
+	</tbody>
+      </table>
+    </div>
+  </div>  
 </div>
 <% end %>

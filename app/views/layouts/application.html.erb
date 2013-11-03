@@ -4,9 +4,11 @@
   <title>AnchoringMng</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag params[:controller] %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="wrap">
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
@@ -33,8 +35,16 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
+  </div>
 
-<%= yield %>
+  <div class="container">
+    <div class="page-header">
+      <%= yield :header %>
+    </div>
+
+    <%= yield %>
+  </div>
+
 
 </body>
 </html>

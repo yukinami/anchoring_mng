@@ -1,22 +1,26 @@
+<% content_for :header do %>
+  <h1>Anchoring Detail</h1>
+<% end %>
+
 <%= render :partial => "anchoring", :object => @anchoring %> 
 
 <%= form_for @anchoring, url: anchor_sail_anchoring_path do |f| %>
-  <p>
-  <%= f.label :actual_anchor_date %>
+  <dl class="dl-horizontal">
+    <dt><%= f.label :actual_anchor_date %></dt>
+    <dd>
+    <% if @anchoring.status == 'confirmed' %>
+      <%= f.datetime_select :actual_anchor_date %>
+    <% else %>
+      <%= f.datetime_select :actual_anchor_date, disabled: 'disabled' %>
+    <% end %>
+    </dd>
 
-  <% if @anchoring.status == 'confirmed' %>
-  <%= f.datetime_select :actual_anchor_date %>
-  <% else %>
-  <%= f.datetime_select :actual_anchor_date, disabled: 'disabled' %>
-  <% end %>
-  </p>
 
-  <% if @anchoring.status == 'anchored' %>
-  <p>
-  <%= f.label :actual_sail_date %>
-  <%= f.datetime_select :actual_sail_date %>
-  </p>
-  <% end %>
+    <% if @anchoring.status == 'anchored' %>
+    <dt><%= f.label :actual_sail_date %></dt>
+    <dd><%= f.datetime_select :actual_sail_date %></dd>
+    <% end %>
 
-  <%= f.submit %>
+    <dt><%= f.submit %></dt>
+  </dl>
 <% end %>

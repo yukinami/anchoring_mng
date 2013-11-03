@@ -1,10 +1,23 @@
-<h1>Anchoring History</h1>
+<% content_for :header do %>
+  <h1>Anchoring History</h1>
+<% end %>
 
-<table>
-  <% @anchorings.each do |anchoring| %>
+<table class="table table-hover">
+  <thead>
     <tr>
+      <th>#</th>
+      <th>Ship Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @anchorings.each_with_index do |anchoring, i| %>
+    <tr>
+      <td><%= i+1 %>
       <td><%= link_to anchoring.ship_name, history_anchoring_path(anchoring) %></td>
     </tr>
   <% end %>
+  </tbody>
+
 </table>
 
