@@ -8,4 +8,5 @@ class Anchoring < ActiveRecord::Base
     return status == 'confirmed'
   end
 
+  scope :none, where(:id => nil).where("id IS NOT ?", nil)
 end

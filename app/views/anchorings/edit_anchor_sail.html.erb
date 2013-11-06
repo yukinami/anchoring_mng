@@ -18,7 +18,7 @@
 
     <% if @anchoring.status == 'anchored' %>
     <dt><%= f.label :actual_sail_date %></dt>
-    <dd><%= f.datetime_select :actual_sail_date, prompt: true, class: "form-control" %></dd>
+    <dd><%= f.datetime_select :actual_sail_date %></dd>
     <% end %>
 
     <dt> <%= button_tag "Update", class: "btn btn-lg btn-default", type: "submit" %></dt>

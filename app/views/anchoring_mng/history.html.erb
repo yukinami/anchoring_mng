@@ -2,6 +2,9 @@
   <h1>Anchoring History</h1>
 <% end %>
 
+<% if flash[:notice] %>
+  <p id="notice"><%= flash[:notice] %></p>
+<% end %>
 <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
   </div>

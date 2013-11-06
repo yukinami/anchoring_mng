@@ -2,6 +2,11 @@ class AnchoringMngController < ApplicationController
   def index
     @anchorings = Anchoring.where(:status => nil)
     @anchorings = @anchorings.paginate(:page => params[:page], :per_page => PER_PAGE)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @anchorings }
+    end
   end
 
   def history
@@ -15,8 +20,15 @@ class AnchoringMngController < ApplicationController
     end
 
     if !params[:anchor_month].blank? 
-      anchor_date = Date.strptime(params[:anchor_month], '%Y-%m')
-      @anchorings = @anchorings.where(created_at: anchor_date.midnight..anchor_date.next_month.midnight)
+      begin
+	anchor_date = Date.strptime(params[:anchor_month], '%Y-%m')
+	@anchorings = @anchorings.where(created_at: anchor_date.midnight..anchor_date.next_month.midnight)
+      rescue ArgumentError
+	@anchorings = Anchoring.none
+	
+	flash[:notice] = 'Format of anchor month is not corrected. '
+      end
+
     end
 
     order_by = ORDERBY_MAP[params[:order_by]]
@@ -27,6 +39,11 @@ class AnchoringMngController < ApplicationController
     end
     
     @anchorings = @anchorings.paginate(:page => params[:page], :per_page => PER_PAGE)
+
+    respond_to do |format|
+      format.html # history.html.erb
+      format.json { render json: @anchorings }
+    end
   end
 
 end
