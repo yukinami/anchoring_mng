@@ -1,6 +1,7 @@
 class AnchoringMngController < ApplicationController
   def index
     @anchorings = Anchoring.where(:status => nil)
+    @anchorings = @anchorings.paginate(:page => params[:page], :per_page => PER_PAGE)
   end
 
   def history
@@ -25,6 +26,7 @@ class AnchoringMngController < ApplicationController
       @anchorings = @anchorings.order("#{order_by} #{order}")
     end
     
+    @anchorings = @anchorings.paginate(:page => params[:page], :per_page => PER_PAGE)
   end
 
 end

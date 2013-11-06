@@ -10,3 +10,6 @@ ORDER_MAP = {
   '1' => 'asc',
   '2' => 'desc'
 }
+
+
+PER_PAGE = 10
