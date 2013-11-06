@@ -23,10 +23,10 @@
 
       <%= label_tag "Order By" %>
       <div class="form-group">
-	<%= select_tag :order_by, options_for_select(ORDERBYS), class: "form-control" %>
+	<%= select_tag :order_by, options_for_select(ORDERBYS, params[:order_by]), class: "form-control" %>
       </div>
       <div class="form-group">
-	<%= select_tag :order, options_for_select(ORDERS), class: "form-control" %>
+	<%= select_tag :order, options_for_select(ORDERS, params[:order]), class: "form-control" %>
       </div>
     <% end %>
   </div>
