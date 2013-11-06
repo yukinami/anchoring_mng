@@ -7,8 +7,7 @@ class AnchoringsController < ApplicationController
     @anchorings = Anchoring.all
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @anchorings }
+      format.html # index.html.erb format.json { render json: @anchorings }
     end
   end
 
@@ -16,6 +15,7 @@ class AnchoringsController < ApplicationController
   # GET /anchorings/1.json
   def show
     @anchoring = Anchoring.find(params[:id])
+    @anchorage_grounds = AnchorageGround.all
 
     respond_to do |format|
       format.html # show.html.erb
@@ -102,10 +102,16 @@ class AnchoringsController < ApplicationController
   def confirm
     @anchoring = Anchoring.find(params[:id])
     @anchoring.update_attributes(status: 'confirmed')
-    
+
     respond_to do |format|
-      format.html { redirect_to index_anchorings_anchorage_grounds_path, notice: 'Anchoring was confirmed.'}
-      format.json { head :no_comment }
+      if @anchoring.update_attributes(params[:anchoring])
+	format.html { redirect_to index_anchorings_anchorage_grounds_path, notice: 'Anchoring was confirmed.'}
+	format.json { head :no_comment }
+      else
+	@anchorage_grounds = AnchorageGround.all
+	format.html { render action: "show" }
+        format.json { render json: @anchoring.errors, status: :unprocessable_entity }
+      end
     end
   end
 
