@@ -52,8 +52,7 @@ class AnchoringsController < ApplicationController
     if @anchoring.status != nil
       render 'edit_anchor_sail'
     end
-
-  end
+end
 
   # POST /anchorings
   # POST /anchorings.json
@@ -119,11 +118,11 @@ class AnchoringsController < ApplicationController
     @anchoring = Anchoring.find(params[:id])
 
     if @anchoring.status == 'confirmed'
-      @anchoring.actual_anchor_date = params[:actual_anchor_date]
+      @anchoring.update_attributes(params[:anchoring])
       @anchoring.status = 'anchored'
       notice = 'anchor datetime has been updated'
     elsif @anchoring.status == 'anchored'
-      @anchoring.actual_sail_date= params[:actual_sail_date]
+      @anchoring.update_attributes(params[:anchoring])
       @anchoring.status = 'sailed'
       notice = 'sail datetime has been updated'
     end

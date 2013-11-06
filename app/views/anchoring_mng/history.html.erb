@@ -2,11 +2,41 @@
   <h1>Anchoring History</h1>
 <% end %>
 
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+  </div>
+  <div class="collapse navbar-collapse">
+    <%= form_tag history_path, class: "navbar-form navbar-left", method: "get", role: "search" do %>
+      <div class="form-group">
+	<%= text_field_tag "ship_name", params[:ship_name],class:"form-control", placeholder: "Ship" %>
+      </div>
+      <div class="form-group">
+	<%= text_field_tag "anchorage_ground_name", params[:anchorage_ground_name],class:"form-control", placeholder: "Anchorage Ground" %>
+      </div>
+      <div class="form-group">
+	<%= text_field_tag "anchor_month", params[:anchor_month],class:"form-control", placeholder: "Date Format/YYYY-MM" %>
+      </div>
+      <button type="submit" class="btn btn-default">Search</button>
+
+      <%= label_tag "Order By" %>
+      <div class="form-group">
+	<%= select_tag :order_by, options_for_select(ORDERBYS), class: "form-control" %>
+      </div>
+      <div class="form-group">
+	<%= select_tag :order, options_for_select(ORDERS), class: "form-control" %>
+      </div>
+    <% end %>
+  </div>
+</nav>
 <table class="table table-hover">
   <thead>
     <tr>
       <th>#</th>
       <th>Ship Name</th>
+      <th>Anchorage Ground</th>
+      <th>Apply Date</th>
+      <th>Anchor Date</th>
+      <th>Sail Date</th>
     </tr>
   </thead>
 
@@ -15,6 +45,10 @@
     <tr>
       <td><%= i+1 %>
       <td><%= link_to anchoring.ship_name, history_anchoring_path(anchoring) %></td>
+      <td><%= anchoring.anchorage_ground.name %></td>
+      <td><%= anchoring.created_at %></td>
+      <td><%= anchoring.actual_anchor_date %></td>
+      <td><%= anchoring.actual_sail_date %></td>
     </tr>
   <% end %>
   </tbody>
