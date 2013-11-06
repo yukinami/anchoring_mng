@@ -100,7 +100,9 @@ end
   
   def confirm
     @anchoring = Anchoring.find(params[:id])
-    @anchoring.update_attributes(status: 'confirmed')
+    @anchoring.status = 'confirmed'
+    @anchoring.confirm_attn_id = session[:user_id]
+    @anchoring.save
 
     respond_to do |format|
       if @anchoring.update_attributes(params[:anchoring])
@@ -120,10 +122,14 @@ end
     if @anchoring.status == 'confirmed'
       @anchoring.update_attributes(params[:anchoring])
       @anchoring.status = 'anchored'
+      @anchoring.anchor_attn_id = session[:user_id]
+
       notice = 'anchor datetime has been updated'
     elsif @anchoring.status == 'anchored'
       @anchoring.update_attributes(params[:anchoring])
       @anchoring.status = 'sailed'
+      @anchoring.sail_attn_id = session[:user_id]
+    
       notice = 'sail datetime has been updated'
     end
 
