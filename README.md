@@ -38,4 +38,3 @@ Deployment:
      mysql> EXIT;
   5. load the database
      rake db:setup RAILS_ENV="production"
-
