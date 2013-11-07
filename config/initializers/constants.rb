@@ -1,5 +1,6 @@
-ORDERBYS = [['Anchor Date', '1'],['Sail Date','2']]
-ORDERS = [['Asc', '1'],['Desc', '2']]
+ORDERBYS = ['actual_anchor_date', 'actual_sail_date']
+
+ORDERS = ['asc', 'desc']
 
 ORDERBY_MAP = {
   '1' => 'actual_anchor_date',

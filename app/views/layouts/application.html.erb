@@ -17,19 +17,19 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Anchoring Manage</a>
+	  <a class="navbar-brand" href="#"><%= t '.title' %></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-	    <li <% if current_page?(root_path) %>class="active"<% end %> ><%= link_to "Applies", root_path %></li>
-            <li <% if current_page?(index_anchorings_anchorage_grounds_path) %>class="active"<% end %> ><%= link_to "Anchorage Ground", index_anchorings_anchorage_grounds_path %></li>
-	    <li <% if current_page?(history_path) %>class="active"<% end %> ><%= link_to "History", history_path %></li>
+	    <li <% if current_page?(root_path) %>class="active"<% end %> ><%= link_to t('.applies'), root_path %></li>
+            <li <% if current_page?(index_anchorings_anchorage_grounds_path) %>class="active"<% end %> ><%= link_to t('.anchorage_ground'), index_anchorings_anchorage_grounds_path %></li>
+	    <li <% if current_page?(history_path) %>class="active"<% end %> ><%= link_to t('.history'), history_path %></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
 	    <% if session[:user_id] != nil %>
-	    <li><%= button_to "Log Out", logout_path, :method => 'delete', :class => "btn btn-default navbar-btn" %>
+	    <li><%= button_to t('.logout'), logout_path, :method => 'delete', :class => "btn btn-default navbar-btn" %>
 	    <% else %>
-	    <li><%= button_to "Sign In", login_path, :method => 'get', :class => "btn btn-default navbar-btn" %>
+	    <li><%= button_to t('.signin'), login_path, :method => 'get', :class => "btn btn-default navbar-btn" %>
 	    <% end %>
           </ul>
         </div><!--/.nav-collapse -->

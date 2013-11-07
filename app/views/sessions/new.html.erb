@@ -14,10 +14,10 @@
     <% end %>
   
     <%= form_tag login_path, :class=> "form-signin" do %>
-      <h2 class="form-signin-heading">Please sign in</h2>
+    <h2 class="form-signin-heading"><%= t '.please_signin' %> </h2>
       <%= text_field_tag :name, flash[:name], class: 'form-control', placeholder: 'Username', required: true, autofocus: true %>
       <%= password_field_tag :password, nil, class: 'form-control' , placeholder: 'Password', required: true %>
-      <%= button_tag "Sign In", class: "btn btn-lg btn-primary btn-block", type: "submit" %>
+      <%= button_tag t('.signin'), class: "btn btn-lg btn-primary btn-block", type: "submit" %>
     <% end %>
   </div>
 </body>

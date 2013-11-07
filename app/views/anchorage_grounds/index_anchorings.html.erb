@@ -1,13 +1,13 @@
 <% content_for :header do %>
-  <h1>Anchorage Grounds</h1>
+<h1><%= t('.anchorage_ground') %></h1>
 <% end %>
 
 <% @anchorage_grounds.each_with_index do |anchorage_ground, i| %>
 <div class="anchorage_ground">
   <h2><%= anchorage_ground.name %></h2>
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#anchor<%= i%>">Anchor</a></li>
-    <li><a href="#sail<%= i%>">Sail</a></li>
+    <li class="active"><a href="#anchor<%= i%>"><%= t('.anchor') %></a></li>
+    <li><a href="#sail<%= i%>"><%= t('.sail') %></a></li>
   </ul>
 
   <div class="tab-content">
@@ -16,7 +16,7 @@
 	<thead>
   	  <tr>
   	    <th>#</th>
-  	    <th>Ship Name</th>
+	    <th><%= t('.ship_name') %></th>
   	  </tr>
   	</thead>
 
@@ -36,7 +36,7 @@
 	<thead>
   	  <tr>
   	    <th>#</th>
-  	    <th>Ship Name</th>
+	    <th><%= t('.ship_name') %></th>
   	  </tr>
   	</thead>
 

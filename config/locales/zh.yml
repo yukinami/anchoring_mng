@@ -1,0 +1,63 @@
+
+zh:
+  time:
+    formats:
+      default: "%Y-%m-%d %H:%M:%S"
+      long: "%Y年%m月%d日%H时%M分%S秒"
+
+#STAET:will_paginate
+  will_paginate:
+    previous_label: "上一页"
+    next_label: "下一页"
+
+#START:layout
+  layouts:
+    application:
+      title: "船舶锚泊管理"
+      applies: "锚泊申请"
+      anchorage_ground: "锚地信息"
+      history: "锚泊历史"
+      signin: "登录"
+      logout: "退出"
+#END:layout
+
+
+#START:singin
+  sessions:
+    new:
+      please_signin: "请登录"
+      signin: "登录"
+#END:singin
+
+
+#START:anchoring_mng
+  anchoring_mng:
+    index:
+      applies: "锚泊申请"
+      ship_name: "船名"
+
+    history:
+      history: "锚泊历史"
+      ship_name: "船名"
+      anchorage_ground: "锚地"
+      anchorage_ground_name: "锚地名"
+      apply_month: "申请日期"
+      apply_month_format: "格式/YYYY-MM"
+      anchor_date: "抛锚时间"
+      sail_date: "起锚时间"
+      search: "检索"
+      order_by: "排序"
+      actual_anchor_date: "抛锚时间"
+      actual_sail_date: "起锚时间"
+      asc: "升序"
+      desc: "降序"
+#END:anchoring_mng
+
+#START:anchorage_ground
+  anchorage_grounds:
+    index_anchorings:
+      anchorage_ground: "锚地信息"
+      anchor: "抛锚"
+      sail: "起锚"
+      ship_name: "船名"
+#END:anchorage_ground
