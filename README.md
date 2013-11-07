@@ -32,7 +32,7 @@ Deployment:
   3. install mysql
   4. create your database
      depot> mysql -u root
-     mysql> CREATE DATABASE depot_production;
+     mysql> CREATE DATABASE depot_production DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
      mysql> GRANT ALL PRIVILEGES ON depot_production.*
      mysql-> TO 'username'@'localhost' IDENTIFIED BY 'password';
      mysql> EXIT;
