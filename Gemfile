@@ -38,3 +38,8 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'will_paginate-bootstrap'
+
+group :production do
+  gem 'mysql'
+end
+
