@@ -6,8 +6,7 @@
   <p id="notice"><%= flash[:notice] %></p>
 <% end %>
 <nav class="navbar navbar-default" role="navigation">
-  <div class="navbar-header">
-  </div>
+  <div class="navbar-header"> </div>
   <div class="collapse navbar-collapse">
     <%= form_tag history_path, class: "navbar-form navbar-left", method: "get", role: "search" do %>
       <div class="form-group">
@@ -52,7 +51,7 @@
       <td><%= anchoring.anchorage_ground.name if anchoring.anchorage_ground %></td>
       <td><%= l anchoring.created_at %></td>
       <td><%= l anchoring.actual_anchor_date if anchoring.actual_anchor_date %></td>
-      <td><%= anchoring.actual_sail_date if anchoring.actual_sail_date %></td>
+      <td><%= l anchoring.actual_sail_date if anchoring.actual_sail_date %></td>
     </tr>
   <% end %>
   </tbody>

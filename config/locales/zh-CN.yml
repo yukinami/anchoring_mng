@@ -2,8 +2,13 @@
 zh-CN:
   time:
     formats:
-      default: "%Y-%m-%d %H:%M:%S"
-      long: "%Y年%m月%d日%H时%M分%S秒"
+      default: "%Y年%m月%d日%H时"
+
+  helpers:
+    label:
+      anchoring:
+        actual_anchor_date: "实际抛锚时间"
+        actual_sail_date: "实际起锚时间"
 
 #STAET:will_paginate
   will_paginate:
@@ -61,3 +66,45 @@ zh-CN:
       sail: "起锚"
       ship_name: "船名"
 #END:anchorage_ground
+
+
+#START:anchorings
+  anchorings:
+    show:
+      anchoring_detail: "船泊详细"
+      select_anchorage_ground: "选择锚地"
+      back: "返回"
+      confirm: "确认"
+      close: "取消"
+      save: "保存"
+    anchoring:
+      category: "类别"
+      ship_name: "船名"
+      ship_name_en: "英文名"
+      country: "国籍"
+      ship_length: "船舶长度"
+      cargo: "货物种类"
+      amount: "件数"
+      gt: "总吨"
+      nt: "净吨"
+      max_draft: "最大吃水"
+      power: "主机功率"
+      anchor_reason: "锚泊原因"
+      anchor_date: "抛锚时间"
+      sail_date: "起锚时间"
+      pier: "拟靠/离码头"
+      ship_contact: "船上联系电话"
+      contacter: "联系人"
+      cellphone: "联系电话"
+      fax: "传真"
+      confirm_attn: "经办人1"
+      anchor_attn: "经办人2"
+      sail_attn: "经办人3"
+    edit_anchor_sail:
+      update: "更新"
+    history:
+      back: "返回"
+      actual_anchor_date: "实际抛锚抛时间"
+      actual_sail_date: "实际起锚时间"
+
+#END:anchorings

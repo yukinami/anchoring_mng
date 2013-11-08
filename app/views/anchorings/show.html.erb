@@ -1,19 +1,19 @@
 <% content_for :header do %>
-  <h1>Anchoring Detail</h1>
+<h1><%= t('.anchoring_detail') %></h1>
 <% end %>
 
 <p id="notice"><%= notice %></p>
 
 <%= render :partial => "anchoring", :object => @anchoring %>
 
-<%= link_to 'Back', root_path, class: 'btn btn-default btn-lg' %>
-<%= button_tag 'Confirm', class: "btn btn-default btn-lg" , :'data-toggle' => "modal", :'data-target' => "#myModal" %> 
+<%= link_to t('.back'), root_path, class: 'btn btn-default btn-lg' %>
+<%= button_tag t('.confirm'), class: "btn btn-default btn-lg" , :'data-toggle' => "modal", :'data-target' => "#myModal" %> 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Select Anchorage Ground</h4>
+	<h4 class="modal-title" id="myModalLabel"><%= t('.select_anchorage_ground') %></h4>
       </div>
       <%= form_for @anchoring, :url => confirm_anchoring_path do |f| %>
       <div class="modal-body">
@@ -27,8 +27,8 @@
 	  <% end %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
+	<button type="button" class="btn btn-default" data-dismiss="modal"><%= t('.close') %></button>
+	<button type="submit" class="btn btn-primary"><%= t('.save') %></button>
       </div>
       <% end %>
     </div><!-- /.modal-content -->

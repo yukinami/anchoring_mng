@@ -2,5 +2,13 @@
 
 <%= render :partial => "anchoring", :object => @anchoring %>
 
-<%= link_to 'Back', { controller: "anchoring_mng", action: "history", id: @anchoring }, class: 'btn btn-default btn-lg'%>
+<dl class="dl-horizontal">
+  <dt><%= t('.actual_anchor_date') %></>
+  <dd><%= l @anchoring.actual_anchor_date %></dd>
+  
+  <dt><%= t('.actual_sail_date') %></dt>
+  <dd><%= l @anchoring.actual_sail_date %></dd>
+</dl>
+
+<%= link_to t('.back'), { controller: "anchoring_mng", action: "history", id: @anchoring }, class: 'btn btn-default btn-lg'%>
 
