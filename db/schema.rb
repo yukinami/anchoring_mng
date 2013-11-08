@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131106084127) do
+ActiveRecord::Schema.define(:version => 20131108063719) do
 
   create_table "anchorage_grounds", :force => true do |t|
     t.string   "name"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(:version => 20131106084127) do
     t.integer  "confirm_attn_id"
     t.integer  "anchor_attn_id"
     t.integer  "sail_attn_id"
+    t.string   "report_org"
+    t.string   "ship_type"
   end
 
   create_table "users", :force => true do |t|

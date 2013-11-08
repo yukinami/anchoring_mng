@@ -6,9 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Anchoring.delete_all
-Anchoring.create(:ship_name => '新华',
+Anchoring.create(:report_org => '江阴通远',
+		  :category => '候泊',
+		  :ship_name => '新华',
 		  :country => '中国',
-		  :category => '散',
+		  :ship_type => '散',
 		  :ship_length => 151,
 		  :cargo => '钢材',
 		  :gt => '10850t',
@@ -21,9 +23,11 @@ Anchoring.create(:ship_name => '新华',
 		  :ship_contact => '13705019360',
 		  :contacter => '殷浩',
 		  :cellphone => '13222898222')
-confirmed_anchoring = Anchoring.create(:ship_name => '兴中',
+confirmed_anchoring = Anchoring.create(:report_org => '江阴通远',
+		  :category => '过船',
+		  :ship_name => '兴中',
 		  :country => '中国',
-		  :category => '散',
+		  :ship_type => '散',
 		  :ship_length => 151,
 		  :cargo => '钢材',
 		  :gt => '10850t',

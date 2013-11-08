@@ -43,6 +43,7 @@ zh-CN:
 
     history:
       history: "锚泊历史"
+      report_org: "报告单位"
       ship_name: "船名"
       anchorage_ground: "锚地"
       anchorage_ground_name: "锚地名"
@@ -78,10 +79,12 @@ zh-CN:
       close: "取消"
       save: "保存"
     anchoring:
+      report_org: "报告单位"
       category: "类别"
       ship_name: "船名"
       ship_name_en: "英文名"
       country: "国籍"
+      ship_type: "船舶类别"
       ship_length: "船舶长度"
       cargo: "货物种类"
       amount: "件数"

@@ -12,6 +12,10 @@ class AnchoringMngController < ApplicationController
 
   def history
     @anchorings = Anchoring.where(:status => 'sailed')
+    if !params[:report_org].blank?
+      @anchorings = @anchorings.where("report_org LIKE ?", "%#{params[:report_org]}%")
+    end
+
     if !params[:ship_name].blank?
       @anchorings = @anchorings.where("ship_name LIKE ?", "%#{params[:ship_name]}%")
     end
