@@ -1,6 +1,8 @@
-<h1>Editing user</h1>
+<% content_for :header do %>
+<h1><%= t('.edit_user') %></h1>
+<% end %>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= link_to t('.show'), @user, class: "btn btn-default" %>
+<%= link_to t('.back'), users_path, class: "btn btn-default" %>

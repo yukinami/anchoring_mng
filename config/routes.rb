@@ -22,6 +22,7 @@ AnchoringMng::Application.routes.draw do
 
   resources :anchorings do
     member do
+      get 'apply'
       put 'confirm'
       get 'history'
       put 'anchor_sail'

@@ -6,31 +6,5 @@
 
 <%= render :partial => "anchoring", :object => @anchoring %>
 
-<%= link_to t('.back'), root_path, class: 'btn btn-default btn-lg' %>
-<%= button_tag t('.confirm'), class: "btn btn-default btn-lg" , :'data-toggle' => "modal", :'data-target' => "#myModal" %> 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	<h4 class="modal-title" id="myModalLabel"><%= t('.select_anchorage_ground') %></h4>
-      </div>
-      <%= form_for @anchoring, :url => confirm_anchoring_path do |f| %>
-      <div class="modal-body">
-	  <% @anchorage_grounds.each do |anchorage_ground| %>
-	  <div class="radio">
-	    <label>
-	      <%= anchorage_ground.name %>
-	      <%= f.radio_button :anchorage_ground_id, anchorage_ground.id %>
-	    </label>
-	  </div>
-	  <% end %>
-      </div>
-      <div class="modal-footer">
-	<button type="button" class="btn btn-default" data-dismiss="modal"><%= t('.close') %></button>
-	<button type="submit" class="btn btn-primary"><%= t('.save') %></button>
-      </div>
-      <% end %>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div>
+<%= link_to t('.edit'), edit_anchoring_path(@anchoring), class: "btn btn-default" %> 
+<%= link_to t('.back'), anchorings_path, class: 'btn btn-default' %>

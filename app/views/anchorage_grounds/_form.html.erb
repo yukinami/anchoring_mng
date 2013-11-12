@@ -1,3 +1,4 @@
+<div class="anchoring_form">
 <%= form_for(@anchorage_ground) do |f| %>
   <% if @anchorage_ground.errors.any? %>
     <div id="error_explanation">
@@ -11,11 +12,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name %> <%= f.text_field :name, :class => "form-control"%>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  
+  <div class="form-group">
+    <%= f.submit t('.confirm'), :class => "btn" %>
   </div>
 <% end %>
+
+</div>

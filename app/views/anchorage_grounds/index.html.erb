@@ -1,23 +1,26 @@
-<h1>Listing anchorage_grounds</h1>
+<% content_for :header do %>
+<h1><%= t('.listing_anchorage_grounds') %></h1>
+<% end %>
 
-<table>
+<table class="table">
   <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
+    <th><%= t('.name') %></th>
     <th></th>
   </tr>
 
 <% @anchorage_grounds.each do |anchorage_ground| %>
   <tr>
     <td><%= anchorage_ground.name %></td>
-    <td><%= link_to 'Show', anchorage_ground %></td>
-    <td><%= link_to 'Edit', edit_anchorage_ground_path(anchorage_ground) %></td>
-    <td><%= link_to 'Destroy', anchorage_ground, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+      <%= link_to t('.show'), anchorage_ground, class: "btn btn-primary" %>
+      <%= link_to t('.edit'), edit_anchorage_ground_path(anchorage_ground), class: "btn btn-primary" %>
+      <%= link_to t('.destory'), anchorage_ground, class: "btn btn-primary", method: :delete, data: { confirm: t('.are_you_sure') } %>
+    </td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Anchorage ground', new_anchorage_ground_path %>
+<%= link_to t('.new_anchorage_ground'), new_anchorage_ground_path, class: "btn btn-default"%>
+

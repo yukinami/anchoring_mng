@@ -14,7 +14,7 @@
   <% @anchorings.each_with_index do |anchoring, index| %>
     <tr>
       <td><%= index+1+params[:page].to_i*PER_PAGE %>
-      <td><%= link_to anchoring.ship_name, anchoring_path(anchoring) %></td>
+      <td><%= link_to anchoring.ship_name, apply_anchoring_path(anchoring) %></td>
     </tr>
   <% end %>
   </tbody>

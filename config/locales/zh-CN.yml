@@ -9,6 +9,59 @@ zh-CN:
       anchoring:
         actual_anchor_date: "实际抛锚时间"
         actual_sail_date: "实际起锚时间"
+        report_org: "报告单位" 
+        category: "类别"
+        ship_name: "船名"
+        ship_name_en: "英文名"
+        country: "国籍"
+        ship_type: "船舶类别"
+        ship_length: "船舶长度"
+        cargo: "货物种类"
+        amount: "件数"
+        gt: "总吨"
+        nt: "净吨"
+        max_draft: "最大吃水"
+        power: "主机功率"
+        anchor_reason: "锚泊原因"
+        anchor_date: "抛锚时间"
+        sail_date: "起锚时间"
+        pier: "拟靠/离码头"
+        ship_contact: "船上联系电话"
+        contacter: "联系人"
+        cellphone: "联系电话"
+        fax: "传真"
+        confirm_attn: "经办人1"
+        anchor_attn: "经办人2"
+        sail_attn: "经办人3"
+      user:
+        name: "用户名"
+        password: "密码"
+        password_confirmation: "确认密码"
+      anchorage_ground:
+        name: "锚地名"
+
+#START:model
+#START:errors
+  activerecord:
+#END:errors
+    models:
+      user:       "用户"
+    attributes:
+      user:
+        name:      "用户名"
+        password:     "密码"
+        password_confirmation:  "确认密码"
+#END:model
+
+#START:errors
+    errors:
+      messages:
+  errors:
+    template:
+      header:
+        one:       "%{model}中有%{count}个错误信息"
+        other:     "%{model}中有%{count}个错误信息"
+#END:errors
 
 #STAET:will_paginate
   will_paginate:
@@ -22,6 +75,9 @@ zh-CN:
       applies: "锚泊申请"
       anchorage_ground: "锚地信息"
       history: "锚泊历史"
+      users: "用户管理"
+      anchorings: "锚泊管理"
+      anchorage_grounds: "锚地管理"
       signin: "登录"
       logout: "退出"
 #END:layout
@@ -59,19 +115,15 @@ zh-CN:
       desc: "降序"
 #END:anchoring_mng
 
-#START:anchorage_ground
-  anchorage_grounds:
-    index_anchorings:
-      anchorage_ground: "锚地信息"
-      anchor: "抛锚"
-      sail: "起锚"
-      ship_name: "船名"
-#END:anchorage_ground
-
-
 #START:anchorings
   anchorings:
+    form: 
+      confirm: "确认"
     show:
+      anchoring_detail: "船泊详细"
+      edit: "编辑"
+      back: "返回"
+    apply:
       anchoring_detail: "船泊详细"
       select_anchorage_ground: "选择锚地"
       back: "返回"
@@ -109,5 +161,79 @@ zh-CN:
       back: "返回"
       actual_anchor_date: "实际抛锚抛时间"
       actual_sail_date: "实际起锚时间"
-
+    index:
+      listing_anchorings: "船泊管理"
+      new_anchoring: "新建船泊信息"
+      show: "详细"
+      edit: "编辑"
+      destory: "删除"
+      are_you_sure: "确认吗？"
+    edit:
+      editing_anchoring: "编辑船泊信息"
+      show: "详细"
+      back: "返回"
+    new:
+      new_anchoring: "新建船舶信息"
+      back: "返回"
 #END:anchorings
+
+#START:users
+  users:
+    new:
+      new_user: "新建用户"
+    form:
+      regist: "确认"
+    index:
+      listing_users: "用户管理"
+      name: "用户名"
+      hashed_password: "密码"
+      new_user: "新建用户"
+      are_you_sure: "确认吗？"
+      show: "详细"
+      edit: "编辑"
+      destory: "删除"
+    show:
+      user_info: "用户信息"
+      name: "用户名"
+      hashed_password: "密码"
+      edit: "编辑"
+      back: "返回" 
+    edit:
+      edit_user: "编辑用户信息"
+      show: "详细"
+      back: "返回"
+#END:users
+
+#START:anchorage_grounds
+  anchorage_grounds:
+    index:
+      listing_anchorage_grounds: "锚地管理"
+      name: "锚地名"
+      show: "详细"
+      edit: "编辑"
+      destory: "删除"
+      new_anchorage_ground: "新建锚地"
+      are_you_sure: "确认吗？"
+    show:
+      anchorage_ground_info: "锚地信息"
+      name: "锚地名"
+      edit: "编辑"
+      back: "返回"
+    edit:
+      edit_anchorage_ground: "编辑锚地信息"
+      show: "详细"
+      back: "返回"
+    form:
+      confirm: "确认"
+    new:
+      new_anchorage_ground: "新建锚地"
+      back: "返回"
+    index_anchorings:
+      anchorage_ground: "锚地信息"
+      anchor: "抛锚"
+      sail: "起锚"
+      ship_name: "船名"
+#END:anchorage_grounds
+
+
+

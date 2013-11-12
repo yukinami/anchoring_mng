@@ -1,6 +1,8 @@
-<h1>Editing anchoring</h1>
+<% content_for :header do %>
+<h1><%= t('.editing_anchoring') %></h1>
+<% end %>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @anchoring %> |
-<%= link_to 'Back', anchorings_path %>
+<%= link_to t('.show'), @anchoring, class: "btn btn-default" %> 
+<%= link_to t('.back'), anchorings_path, class: "btn btn-default" %>

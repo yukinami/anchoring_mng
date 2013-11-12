@@ -1,6 +1,8 @@
-<h1>Editing anchorage_ground</h1>
+<% content_for :header do %>
+<h1><%= t('.edit_anchorage_ground') %></h1>
+<% end %>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @anchorage_ground %> |
-<%= link_to 'Back', anchorage_grounds_path %>
+<%= link_to t('.show'), @anchorage_ground, class: "btn btn-default" %> 
+<%= link_to t('.back'), anchorage_grounds_path, class: "btn btn-default" %>

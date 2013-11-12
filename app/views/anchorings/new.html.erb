@@ -1,5 +1,7 @@
-<h1>New anchoring</h1>
+<% content_for :header do %>
+<h1><%= t('.new_anchoring') %></h1>
+<% end %>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', anchorings_path %>
+<%= link_to t('.back'), anchorings_path, :class => "btn btn-default" %>

@@ -1,5 +1,7 @@
-<h1>New anchorage_ground</h1>
+<% content_for :header do %>
+<h1><%= t('.new_anchorage_ground') %></h1>
+<% end %>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', anchorage_grounds_path %>
+<%= link_to t('.back'), anchorage_grounds_path, :class => "btn btn-default"%>

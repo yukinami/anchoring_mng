@@ -1,10 +1,10 @@
-<div class="depot_form">
+<div class="anchoring_form">
 
-<%= form_for @user do |f| %>
+  <%= form_for @user, :html => {class: "", role:"from"} do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %>
-        prohibited this user from being saved:</h2>
+      <h2><%= t('errors.template.header', :count => @user.errors.size, :model => t('activerecord.models.user')) %>
+      </h2>
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -13,29 +13,25 @@
     </div>
   <% end %>
 
-  <fieldset>
-  <legend>Enter User Details</legend>
-
-  <div>
-    <%= f.label :name %>:
-    <%= f.text_field :name, :size => 40 %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :size => 40, :class => "form-control" %>
   </div>
 
-  <div>
-    <%= f.label :password, 'Password' %>:
-    <%= f.password_field :password, :size => 40 %>
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.text_field :password, :size => 40, :class => "form-control" %>
   </div>
 
-  <div>
-    <%= f.label :password_confirmation, 'Confirm' %>:
-    <%= f.password_field :password_confirmation, :size => 40 %>
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.text_field :password_confirmation, :size => 40, :class => "form-control" %>
   </div>
 
-  <div>
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit t('.regist'), :class => "btn" %>
   </div>
 
-  </fieldset>
 <% end %>
 
 </div>

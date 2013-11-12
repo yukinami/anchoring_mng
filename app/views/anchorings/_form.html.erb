@@ -1,3 +1,5 @@
+<div class="anchoring_form">
+
 <%= form_for(@anchoring) do |f| %>
   <% if @anchoring.errors.any? %>
     <div id="error_explanation">
@@ -11,83 +13,85 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.text_field :category, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :ship_name %><br />
-    <%= f.text_field :ship_name %>
+  <div class="form-group">
+    <%= f.label :ship_name %>
+    <%= f.text_field :ship_name, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :ship_name_en %><br />
-    <%= f.text_field :ship_name_en %>
+  <div class="form-group">
+    <%= f.label :ship_name_en %>
+    <%= f.text_field :ship_name_en, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :country %><br />
-    <%= f.text_field :country %>
+  <div class="form-group">
+    <%= f.label :country %>
+    <%= f.text_field :country, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :ship_length %><br />
-    <%= f.number_field :ship_length %>
+  <div class="form-group">
+    <%= f.label :ship_length %>
+    <%= f.number_field :ship_length, :class => "form-control" %> </div>
+  <div class="form-group">
+    <%= f.label :cargo %>
+    <%= f.text_field :cargo, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :cargo %><br />
-    <%= f.text_field :cargo %>
+  <div class="form-group">
+    <%= f.label :amount %>
+    <%= f.number_field :amount, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :amount %><br />
-    <%= f.number_field :amount %>
+  <div class="form-group">
+    <%= f.label :gt %>
+    <%= f.number_field :gt, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :gt %><br />
-    <%= f.number_field :gt %>
+  <div class="form-group">
+    <%= f.label :nt %>
+    <%= f.number_field :nt, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :nt %><br />
-    <%= f.number_field :nt %>
+  <div class="form-group">
+    <%= f.label :max_draft %>
+    <%= f.number_field :max_draft, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :max_draft %><br />
-    <%= f.number_field :max_draft %>
+  <div class="form-group">
+    <%= f.label :power %>
+    <%= f.number_field :power, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :power %><br />
-    <%= f.number_field :power %>
+  <div class="form-group">
+    <%= f.label :anchor_reason %>
+    <%= f.text_field :anchor_reason, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :anchor_reason %><br />
-    <%= f.text_field :anchor_reason %>
+  <div class="form-group">
+    <%= f.label :anchor_date %> <br />
+    <%= f.date_select :anchor_date, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :anchor_date %><br />
-    <%= f.date_select :anchor_date %>
+  <div class="form-group">
+    <%= f.label :sail_date %> <br /> 
+    <%= f.date_select :sail_date, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :sail_date %><br />
-    <%= f.date_select :sail_date %>
+  <div class="form-group">
+    <%= f.label :pier %>
+    <%= f.text_field :pier, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :pier %><br />
-    <%= f.text_field :pier %>
+  <div class="form-group">
+    <%= f.label :ship_contact %>
+    <%= f.text_field :ship_contact, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :ship_contact %><br />
-    <%= f.text_field :ship_contact %>
+  <div class="form-group">
+    <%= f.label :contacter %>
+    <%= f.text_field :contacter, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :contacter %><br />
-    <%= f.text_field :contacter %>
+  <div class="form-group">
+    <%= f.label :cellphone %>
+    <%= f.text_field :cellphone, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :cellphone %><br />
-    <%= f.text_field :cellphone %>
+  <div class="form-group">
+    <%= f.label :fax %>
+    <%= f.text_field :fax, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :fax %><br />
-    <%= f.text_field :fax %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group">
+    <%= f.submit t('.confirm'), class: "btn" %>
   </div>
 <% end %>
+
+</div>

@@ -25,6 +25,17 @@ class AnchoringsController < ApplicationController
 
   # GET /anchorings/1
   # GET /anchorings/1.json
+  def apply
+    @anchoring = Anchoring.find(params[:id])
+    @anchorage_grounds = AnchorageGround.all
+
+    respond_to do |format|
+      format.html # apply.html.erb
+      format.json { render json: @anchoring }
+    end
+  end
+  # GET /anchorings/1
+  # GET /anchorings/1.json
   def history 
     @anchoring = Anchoring.find(params[:id])
 

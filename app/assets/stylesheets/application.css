@@ -12,3 +12,8 @@
  *= require bootstrap
  *= require_tree .
  */
+
+
+.anchoring_form{
+  width: 400px;
+}
