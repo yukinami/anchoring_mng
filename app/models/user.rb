@@ -36,6 +36,8 @@ class User < ActiveRecord::Base
     if password.present?
       generate_salt
       self.hashed_password = self.class.encrypt_password(password, salt)
+    else
+      self.hashed_password = nil
     end
   end
 
@@ -43,7 +45,7 @@ class User < ActiveRecord::Base
   private
 
     def password_must_be_present
-      errors.add(:password, "Missing password") unless hashed_password.present?
+      errors.add(:password, :missing_password) unless hashed_password.present?
     end
     
     def generate_salt

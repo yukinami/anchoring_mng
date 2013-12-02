@@ -32,6 +32,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
 	    <% if session[:user_id] != nil %>
+	    <li><%= button_to t('.change_password'), edit_password_user_path(session[:user_id]), :method => 'get', :class => "btn btn-default navbar-btn" %>
 	    <li><%= button_to t('.logout'), logout_path, :method => 'delete', :class => "btn btn-default navbar-btn" %>
 	    <% else %>
 	    <li><%= button_to t('.signin'), login_path, :method => 'get', :class => "btn btn-default navbar-btn" %>

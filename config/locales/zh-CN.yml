@@ -40,10 +40,19 @@ zh-CN:
       anchorage_ground:
         name: "锚地名"
 
-#START:model
 #START:errors
   activerecord:
+    errors:
+      messages:
+      models:
+        user:
+          attributes:
+            base:
+              old_password_not_correct: "旧密码不正确"
+            password:
+              missing_password: "不能为空"
 #END:errors
+#START:model
     models:
       user:       "用户"
     attributes:
@@ -54,8 +63,6 @@ zh-CN:
 #END:model
 
 #START:errors
-    errors:
-      messages:
   errors:
     template:
       header:
@@ -80,6 +87,7 @@ zh-CN:
       anchorage_grounds: "锚地管理"
       signin: "登录"
       logout: "退出"
+      change_password: "修改密码"
 #END:layout
 
 
@@ -202,6 +210,10 @@ zh-CN:
       edit_user: "编辑用户信息"
       show: "详细"
       back: "返回"
+    edit_password:
+      change_password: "修改密码"
+      change: "确认"
+      old_password: "旧密码"
 #END:users
 
 #START:anchorage_grounds
@@ -235,5 +247,7 @@ zh-CN:
       ship_name: "船名"
 #END:anchorage_grounds
 
+  msg:
+    update_password_success: "密码修改成功，请重新登录"
 
 

@@ -11,7 +11,13 @@ AnchoringMng::Application.routes.draw do
     get 'history' => :history
   end
 
-  resources :users
+  resources :users do
+    member do
+      get 'edit_password'
+      put 'update_password'
+    end
+  end
+
 
   resources :anchorage_grounds do
     collection do
