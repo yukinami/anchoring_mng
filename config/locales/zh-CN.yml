@@ -104,6 +104,8 @@ zh-CN:
     index:
       applies: "锚泊申请"
       ship_name: "船名"
+      anchor_date: "预计抛锚时间"
+      sail_date: "预计起锚时间"
 
     history:
       history: "锚泊历史"

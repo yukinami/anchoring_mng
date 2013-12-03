@@ -7,6 +7,8 @@
     <tr>
       <th>#</th>
       <th><%= t('.ship_name') %></th>
+      <th><%= t('.anchor_date') %></th>
+      <th><%= t('.sail_date') %></th>
     </tr>
   </thead>
 
@@ -15,6 +17,8 @@
     <tr>
       <td><%= index+1+params[:page].to_i*PER_PAGE %>
       <td><%= link_to anchoring.ship_name, apply_anchoring_path(anchoring) %></td>
+      <td><%= l anchoring.anchor_date %></td>
+      <td><%= l anchoring.sail_date %></td>
     </tr>
   <% end %>
   </tbody>
