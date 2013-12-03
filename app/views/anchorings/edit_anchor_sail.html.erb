@@ -4,6 +4,7 @@
 
 <%= render :partial => "anchoring", :object => @anchoring %> 
 
+<div style="width:600px">
 <%= form_for @anchoring, url: anchor_sail_anchoring_path do |f| %>
   <dl class="dl-horizontal">
     <dt><%= f.label :actual_anchor_date %></dt>
@@ -21,6 +22,21 @@
     <dd><%= f.datetime_select :actual_sail_date %></dd>
     <% end %>
 
+    <% if @anchoring.status == 'confirmed' %>
+    <dt><%= f.label :duty_phone %></dt>
+    <dd><%= f.text_field :duty_phone, class: "form-control" %></dd>
+
+    <dt><%= f.label :remark %></dt>
+    <dd><%= f.text_area :remark, class: "form-control", rows: 5, cols: 20 %></dd>
+    <% else %>
+    <dt><%= f.label :duty_phone %></dt>
+    <dd><%= @anchoring.duty_phone %></dd>
+
+    <dt><%= f.label :remark %></dt>
+    <dd><%= @anchoring.remark %></dd>
+    <% end %>
+
     <dt> <%= button_tag t('.update'), class: "btn btn-default", type: "submit" %></dt>
   </dl>
 <% end %>
+</div>

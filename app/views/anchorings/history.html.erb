@@ -8,6 +8,12 @@
   
   <dt><%= t('.actual_sail_date') %></dt>
   <dd><%= l @anchoring.actual_sail_date %></dd>
+
+  <dt><%= t('.duty_phone') %></dt>
+  <dd><%= @anchoring.duty_phone %></dd>
+
+  <dt><%= t('.remark') %></dt>
+  <dd><%= @anchoring.remark %></dd>
 </dl>
 
 <%= link_to t('.back'), { controller: "anchoring_mng", action: "history", id: @anchoring }, class: 'btn btn-default'%>

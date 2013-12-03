@@ -33,6 +33,8 @@ zh-CN:
         confirm_attn: "经办人1"
         anchor_attn: "经办人2"
         sail_attn: "经办人3"
+        duty_phone: "值班电话"
+        remark: "备注"
       user:
         name: "用户名"
         password: "密码"
@@ -171,6 +173,8 @@ zh-CN:
       back: "返回"
       actual_anchor_date: "实际抛锚抛时间"
       actual_sail_date: "实际起锚时间"
+      duty_phone: "值班电话"
+      remark: "备注"
     index:
       listing_anchorings: "船泊管理"
       new_anchoring: "新建船泊信息"
