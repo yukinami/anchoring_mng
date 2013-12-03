@@ -43,8 +43,10 @@ confirmed_anchoring = Anchoring.create(:report_org => '江阴通远',
 		  :status => 'confirmed')
 
 AnchorageGround.delete_all
-AnchorageGround.create(:name => '锚地1').anchorings<<(confirmed_anchoring)
-AnchorageGround.create(:name => '锚地2')
+AnchorageGround.create(:name => '12号锚地').anchorings<<(confirmed_anchoring)
+AnchorageGround.create(:name => '15号锚地')
+AnchorageGround.create(:name => '14号停泊区')
+AnchorageGround.create(:name => '15号停泊区')
 
 User.delete_all
 User.create(:name => 'admin', :password => 'admin', :password_confirmation => 'admin')
