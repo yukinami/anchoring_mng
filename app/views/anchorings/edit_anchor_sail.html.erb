@@ -1,5 +1,5 @@
 <% content_for :header do %>
-  <h1>Anchoring Detail</h1>
+<h1><%= t('.anchoring_detail') %></h1>
 <% end %>
 
 <%= render :partial => "anchoring", :object => @anchoring %> 
@@ -7,6 +7,7 @@
 <div style="width:600px">
 <%= form_for @anchoring, url: anchor_sail_anchoring_path do |f| %>
   <dl class="dl-horizontal">
+    
     <dt><%= f.label :actual_anchor_date %></dt>
     <dd>
     <% if @anchoring.status == 'confirmed' %>
@@ -23,12 +24,34 @@
     <% end %>
 
     <% if @anchoring.status == 'confirmed' %>
+    <dt><%= t('.anchor_into_water') %></dt>
+    <dd><%= t('.anchor_chain') %></dt>
+
+    <dt><%= f.label :left_anchor_chain %></dt>
+    <dd>
+    <%= f.select :left_anchor_chain, options_for_select(anchor_chain_options), {}, class: "form-control" %>
+    </dd>
+
+    <dt><%= f.label :right_anchor_chain %></dt> 
+    <dd>
+    <%= f.select :right_anchor_chain, options_for_select(anchor_chain_options), {}, class: "form-control" %>
+    </dd>
     <dt><%= f.label :duty_phone %></dt>
     <dd><%= f.text_field :duty_phone, class: "form-control" %></dd>
 
     <dt><%= f.label :remark %></dt>
     <dd><%= f.text_area :remark, class: "form-control", rows: 5, cols: 20 %></dd>
+
     <% else %>
+    <dt><%= t('.anchor_into_water') %></dt>
+    <dd><%= t('.anchor_chain') %></dt>
+
+    <dt><%= f.label :left_anchor_chain %></dt>
+    <dd><%= @anchoring.left_anchor_chain %> </dd>
+
+    <dt><%= f.label :right_anchor_chain %></dt>
+    <dd><%= @anchoring.right_anchor_chain %></dd>
+
     <dt><%= f.label :duty_phone %></dt>
     <dd><%= @anchoring.duty_phone %></dd>
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131203124458) do
+ActiveRecord::Schema.define(:version => 20131204122851) do
 
   create_table "anchorage_grounds", :force => true do |t|
     t.string   "name"
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(:version => 20131203124458) do
     t.string   "ship_type"
     t.string   "duty_phone"
     t.string   "remark"
+    t.integer  "left_anchor_chain"
+    t.integer  "right_anchor_chain"
   end
 
   create_table "users", :force => true do |t|

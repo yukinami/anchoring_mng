@@ -14,3 +14,5 @@ ORDER_MAP = {
 
 
 PER_PAGE = 10
+
+ANCHOR_CHAIN = [3,4,5,6,7,8]

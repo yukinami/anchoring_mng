@@ -35,6 +35,8 @@ zh-CN:
         sail_attn: "经办人3"
         duty_phone: "值班电话"
         remark: "备注"
+        left_anchor_chain: "左锚"
+        right_anchor_chain: "右锚"
       user:
         name: "用户名"
         password: "密码"
@@ -168,13 +170,29 @@ zh-CN:
       anchor_attn: "经办人2"
       sail_attn: "经办人3"
     edit_anchor_sail:
+      anchoring_detail: "船泊详细"
       update: "更新"
+      '3': "3节"
+      '4': "4节"
+      '5': "5节"
+      '6': "6节"
+      '7': "7节"
+      '8': "8节"
+      anchor_into_water: "锚链入水"
+      anchor_chain: "锚链"
+      left_anchor_chain: "左锚"
+      right_anchor_chain: "右锚"
+      
     history:
       back: "返回"
       actual_anchor_date: "实际抛锚抛时间"
       actual_sail_date: "实际起锚时间"
       duty_phone: "值班电话"
       remark: "备注"
+      anchor_into_water: "锚链入水"
+      anchor_chain: "锚链"
+      left_anchor_chain: "左锚"
+      right_anchor_chain: "右锚"
     index:
       listing_anchorings: "船泊管理"
       new_anchoring: "新建船泊信息"
