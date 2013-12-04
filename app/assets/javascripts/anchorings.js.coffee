@@ -4,10 +4,10 @@
 
 active_save_button = ->
   has_select = $(':radio[name^="anchoring"]:checked').size() > 0
-  $('.modal-dialog :submit').prop('disabled', !has_select)
+  $('#applyModal :submit').prop('disabled', !has_select)
 
 $ ->
   active_save_button()
-  $('.modal-dialog :radio').click ->
+  $('#applyModal :radio').click ->
     active_save_button()
   

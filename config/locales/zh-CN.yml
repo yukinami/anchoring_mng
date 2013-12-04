@@ -207,6 +207,9 @@ zh-CN:
     new:
       new_anchoring: "新建船舶信息"
       back: "返回"
+      import: "导入"
+      close: "关闭"
+      confirm: "确认"
 #END:anchorings
 
 #START:users
