@@ -14,7 +14,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 	<h4 class="modal-title" id="myModalLabel"><%= t('.import') %></h4>
       </div>
-      <%= form_tag do |f| %>
+      <%= form_tag import_anchorings_path, multipart: true do %>
       <div class="modal-body">
 	<%= file_field_tag 'import_file' %>
       </div>

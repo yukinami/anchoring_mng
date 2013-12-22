@@ -9,18 +9,17 @@
   <dl class="dl-horizontal">
     
     <dt><%= f.label :actual_anchor_date %></dt>
-    <dd>
-    <% if @anchoring.status == 'confirmed' %>
-    <%= f.datetime_select :actual_anchor_date %>
+    <dd> <% if @anchoring.status == 'confirmed' %>
+    <%= f.datetime_select :actual_anchor_date, "written_on" => true, :discard_minute => true %>
     <% else %>
-      <%= f.datetime_select :actual_anchor_date, disabled: 'disabled' %>
+    <%= f.datetime_select :actual_anchor_date, {"written_on" => true, :discard_minute => true }, disabled: 'disabled' %>
     <% end %>
     </dd>
 
 
     <% if @anchoring.status == 'anchored' %>
     <dt><%= f.label :actual_sail_date %></dt>
-    <dd><%= f.datetime_select :actual_sail_date %></dd>
+    <dd><%= f.datetime_select :actual_sail_date,"written_on" => true, :discard_minute => true %></dd>
     <% end %>
 
     <% if @anchoring.status == 'confirmed' %>

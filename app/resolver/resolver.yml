@@ -1,0 +1,65 @@
+---
+:anchoring:
+  :report_org:
+    :row: 7
+    :col: 7
+  :category:
+    :row: 7
+    :col: 28
+  :ship_name:
+    :row: 9
+    :col: 5
+  :ship_name_en:
+    :row: 9
+    :col: 18
+  :country:
+    :row: 9
+    :col: 29
+  :ship_type:
+    :row: 9
+    :col: 39
+  :ship_length:
+    :row: 11
+    :col: 8
+  :cargo:
+    :row: 11
+    :col: 23
+  :amount:
+    :row: 11
+    :col: 27
+  :gt:
+    :row: 11
+    :col: 35
+  :nt:
+    :row: 11
+    :col: 40
+  :max_draft:
+    :row: 13
+    :col: 8
+  :power:
+    :row: 13
+    :col: 21
+  :anchor_reason:
+    :row: 13
+    :col: 35
+  :anchor_date:
+    :row: 15
+    :col: 7..19
+  :sail_date:
+    :row: 15
+    :col: 26..38
+  :pier:
+    :row: 17
+    :col: 8
+  :ship_contact:
+    :row: 17
+    :col: 25
+  :contacter:
+    :row: 19
+    :col: 6
+  :cellphone:
+    :row: 19
+    :col: 18
+  :fax:
+    :row: 19
+    :col: 33

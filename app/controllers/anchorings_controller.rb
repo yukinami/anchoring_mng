@@ -4,8 +4,7 @@ class AnchoringsController < ApplicationController
   # GET /anchorings
   # GET /anchorings.json
   def index
-    @anchorings = Anchoring.all
-
+    @anchorings = Anchoring.all 
     respond_to do |format|
       format.html # index.html.erb format.json { render json: @anchorings }
     end
@@ -59,6 +58,8 @@ class AnchoringsController < ApplicationController
   # GET /anchorings/1/edit
   def edit
     @anchoring = Anchoring.find(params[:id])
+
+    puts @anchoring
     
     if @anchoring.status != nil
       render 'edit_anchor_sail'
@@ -152,5 +153,47 @@ end
     end
 
   end
+
+  def import
+    f = params[:import_file].tempfile
+    anchoring_params = [:report_org, :category, :ship_name, :ship_name_en,
+			:country, :ship_type, :ship_length, :cargo, :amount,
+			:gt, :nt, :max_draft, :power, :anchor_reason,
+			:anchor_date, :sail_date, :pier, :ship_contact,
+			:contacter, :cellphone, :fax]
+
+
+    @anchoring = Anchoring.new create_anchoring_from_anchoring_params(f, anchoring_params)
+
+    puts @anchoring.inspect
+    respond_to do |format|
+      format.html { render 'new'}
+      format.json { render json: @anchoring }
+    end
+  end
+
+  private
+    def create_anchoring_from_anchoring_params(source, params)
+      anchoring_params = Hash.new
+      params.each do |p|
+	anchoring_params[p] = ANCHORING_RESOLVER.resolve source, 'anchoring', p
+      end
+      
+      format = I18n.translate('time.formats.default')
+      anchor_date = DateTime.strptime(anchoring_params[:anchor_date], format)
+      sail_date = DateTime.strptime(anchoring_params[:sail_date], format)
+
+      anchoring_params[:'anchor_date(1i)'] = anchor_date.year.to_s
+      anchoring_params[:'anchor_date(2i)'] = anchor_date.month.to_s
+      anchoring_params[:'anchor_date(3i)'] = anchor_date.day.to_s
+      anchoring_params[:'anchor_date(4i)'] = anchor_date.hour.to_s
+
+      anchoring_params[:'sail_date(1i)'] = sail_date.year.to_s
+      anchoring_params[:'sail_date(2i)'] = sail_date.month.to_s
+      anchoring_params[:'sail_date(3i)'] = sail_date.day.to_s
+      anchoring_params[:'sail_date(4i)'] = sail_date.hour.to_s
+      
+      anchoring_params.except(:anchor_date, :sail_date)
+    end
 
 end

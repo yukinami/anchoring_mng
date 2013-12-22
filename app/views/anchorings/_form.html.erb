@@ -1,8 +1,7 @@
 <div class="anchoring_form">
 
 <%= form_for(@anchoring) do |f| %>
-  <% if @anchoring.errors.any? %>
-    <div id="error_explanation">
+  <% if @anchoring.errors.any? %> <div id="error_explanation">
       <h2><%= pluralize(@anchoring.errors.count, "error") %> prohibited this anchoring from being saved:</h2>
 <ul>
       <% @anchoring.errors.full_messages.each do |msg| %>
@@ -11,6 +10,10 @@
       </ul> </div>
   <% end %>
 
+  <div class="form-group">
+    <%= f.label :report_org%>
+    <%= f.text_field :report_org, :class => "form-control" %>
+  </div>
   <div class="form-group">
     <%= f.label :category %>
     <%= f.text_field :category, :class => "form-control" %>
@@ -28,6 +31,10 @@
     <%= f.text_field :country, :class => "form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label :ship_type%>
+    <%= f.text_field :ship_type, :class => "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label :ship_length %>
     <%= f.number_field :ship_length, :class => "form-control" %> </div>
   <div class="form-group">
@@ -40,11 +47,11 @@
   </div>
   <div class="form-group">
     <%= f.label :gt %>
-    <%= f.number_field :gt, :class => "form-control" %>
+    <%= f.text_field :gt, :class => "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :nt %>
-    <%= f.number_field :nt, :class => "form-control" %>
+    <%= f.text_field :nt, :class => "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :max_draft %>
@@ -52,18 +59,18 @@
   </div>
   <div class="form-group">
     <%= f.label :power %>
-    <%= f.number_field :power, :class => "form-control" %>
+    <%= f.text_field :power, :class => "form-control" %>
   </div> <div class="form-group">
     <%= f.label :anchor_reason %>
     <%= f.text_field :anchor_reason, :class => "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :anchor_date %> <br />
-    <%= f.date_select :anchor_date, :class => "form-control" %>
+    <%= f.datetime_select :anchor_date, "written_on" => true, :discard_minute=> true %>
   </div>
   <div class="form-group">
     <%= f.label :sail_date %> <br /> 
-    <%= f.date_select :sail_date, :class => "form-control" %>
+    <%= f.datetime_select :sail_date, "written_on" => true, :discard_minute=> true %>
   </div>
   <div class="form-group">
     <%= f.label :pier %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131204122851) do
+ActiveRecord::Schema.define(:version => 20131222092154) do
 
   create_table "anchorage_grounds", :force => true do |t|
     t.string   "name"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20131204122851) do
     t.string   "gt"
     t.string   "nt"
     t.integer  "max_draft"
-    t.integer  "power"
+    t.string   "power"
     t.string   "anchor_reason"
     t.datetime "anchor_date"
     t.datetime "sail_date"

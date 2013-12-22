@@ -33,6 +33,10 @@ AnchoringMng::Application.routes.draw do
       get 'history'
       put 'anchor_sail'
     end
+    collection do
+      post 'import'
+    end
+
   end
 
   # The priority is based upon order of creation:
