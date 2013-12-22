@@ -4,7 +4,11 @@
 
 <% @anchorage_grounds.each_with_index do |anchorage_ground, i| %>
 <div class="anchorage_ground">
-  <h2><%= anchorage_ground.name %></h2>
+  <h2>
+    <%= anchorage_ground.name %>
+    <small><%= t('.confirmed_amount') %>(<%= anchorage_ground.anchorings.confirmed.size %>)</small>
+    <small><%= t('.anchored_amount') %>(<%= anchorage_ground.anchorings.anchored.size %>)</small>
+  </h2>
   <ul class="nav nav-tabs">
     <li class="active"><a href="#anchor<%= i%>"><%= t('.anchor') %></a></li>
     <li><a href="#sail<%= i%>"><%= t('.sail') %></a></li>

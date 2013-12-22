@@ -272,6 +272,8 @@ zh-CN:
       anchor: "抛锚"
       sail: "起锚"
       ship_name: "船名"
+      confirmed_amount: "待抛锚"
+      anchored_amount: "待起锚"
 #END:anchorage_grounds
 
   msg:

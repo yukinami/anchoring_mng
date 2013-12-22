@@ -3,8 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .anchorage_ground{
-  margin-left: 0;
-  margin-right: 0;
   background-color: white;
   border-width: 1px;
   border-color: #DDD;
@@ -12,7 +10,11 @@
   box-shadow: none;
   border-style: solid;
   padding: 5px 15px 15px;
-  margin: 0 0 15px;
+  margin: 0 0 15px 15px; 
+  width: 500px;
+  float: left;
+  height: 400px;
+  overflow-y: auto;
 }
 
 .anchoring_form{
