@@ -2,10 +2,13 @@
 <h1><%= t('.new_anchoring') %></h1>
 <% end %>
 
+<div class="form-group">
+  <%= button_tag t('.import'), class: "btn btn-default" , :'data-toggle' => "modal", :'data-target' => "#importModal" %> 
+</div>
+
 <%= render 'form' %>
 
 <%= link_to t('.back'), anchorings_path, :class => "btn btn-default" %>
-<%= button_tag t('.import'), class: "btn btn-default" , :'data-toggle' => "modal", :'data-target' => "#importModal" %> 
 
 <div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">

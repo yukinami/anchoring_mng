@@ -19,16 +19,16 @@
       <table class="table table-hover">
 	<thead>
   	  <tr>
-  	    <th>#</th>
-	    <th><%= t('.ship_name') %></th>
+	    <th><h4>#</h4></th>
+	    <th><h4><%= t('.ship_name') %></h4></th>
   	  </tr>
   	</thead>
 
 	<tbody>
         <% anchorage_ground.anchorings.confirmed.each_with_index do |anchoring, i| %>
 	  <tr>
-	    <td><%= i+1 %>
-	    <td><%= link_to anchoring.ship_name, edit_anchoring_path(anchoring) %></td>
+	    <td><h4><%= i+1 %></h4></td>
+	    <td><h4><%= link_to anchoring.ship_name, edit_anchoring_path(anchoring) %></h4></td>
           </tr>
         <% end %>
 	</tbody>
@@ -39,16 +39,16 @@
       <table class="table table-hover">
 	<thead>
   	  <tr>
-  	    <th>#</th>
-	    <th><%= t('.ship_name') %></th>
+	    <th><h4>#</h4></th>
+	    <th><h4><%= t('.ship_name') %></h4></th>
   	  </tr>
   	</thead>
 
 	<tbody>
         <% anchorage_ground.anchorings.anchored.each_with_index do |anchoring, i| %>
 	  <tr>
-	    <td><%= i+1 %>
-	    <td><%= link_to anchoring.ship_name, edit_anchoring_path(anchoring) %></td>
+	    <td><h4><%= i+1 %></h4></td>
+	    <td><h4><%= link_to anchoring.ship_name, edit_anchoring_path(anchoring) %></h4></td>
           </tr>
         <% end %>
 	</tbody>

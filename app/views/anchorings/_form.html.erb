@@ -1,4 +1,4 @@
-<div class="anchoring_form">
+<div class="anchoring_two_column_form">
 
 <%= form_for(@anchoring) do |f| %>
   <% if @anchoring.errors.any? %> <div id="error_explanation">
@@ -10,90 +10,91 @@
       </ul> </div>
   <% end %>
 
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :report_org%>
     <%= f.text_field :report_org, :class => "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :category %>
     <%= f.text_field :category, :class => "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :ship_name %>
     <%= f.text_field :ship_name, :class => "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :ship_name_en %>
     <%= f.text_field :ship_name_en, :class => "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :country %>
     <%= f.text_field :country, :class => "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :ship_type%>
     <%= f.text_field :ship_type, :class => "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :ship_length %>
     <%= f.number_field :ship_length, :class => "form-control" %> </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :cargo %>
     <%= f.text_field :cargo, :class => "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :amount %>
     <%= f.number_field :amount, :class => "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :gt %>
     <%= f.text_field :gt, :class => "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :nt %>
     <%= f.text_field :nt, :class => "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :max_draft %>
     <%= f.number_field :max_draft, :class => "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :power %>
     <%= f.text_field :power, :class => "form-control" %>
-  </div> <div class="form-group">
+  </div> 
+  <div class="form-group col-lg-6">
     <%= f.label :anchor_reason %>
     <%= f.text_field :anchor_reason, :class => "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :anchor_date %> <br />
     <%= f.datetime_select :anchor_date, "written_on" => true, :discard_minute=> true %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :sail_date %> <br /> 
     <%= f.datetime_select :sail_date, "written_on" => true, :discard_minute=> true %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :pier %>
     <%= f.text_field :pier, :class => "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :ship_contact %>
     <%= f.text_field :ship_contact, :class => "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :contacter %>
     <%= f.text_field :contacter, :class => "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-6">
     <%= f.label :cellphone %>
     <%= f.text_field :cellphone, :class => "form-control" %>
   </div>
-  <div class="form-group">
+  <div class="form-group col-lg-12">
     <%= f.label :fax %>
     <%= f.text_field :fax, :class => "form-control" %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group col-lg-12">
     <%= f.submit t('.confirm'), class: "btn" %>
   </div>
 <% end %>
