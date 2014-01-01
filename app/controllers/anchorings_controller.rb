@@ -160,12 +160,15 @@ end
 			:anchor_date, :sail_date, :pier, :ship_contact,
 			:contacter, :cellphone, :fax]
 
+    begin
+      @anchoring = Anchoring.new create_anchoring_from_anchoring_params(f, anchoring_params)
+    rescue 
+      flash[:notice] = I18n.t('msg.import_file_is_incorrect')
+      @anchoring = Anchoring.new
+    end
 
-    @anchoring = Anchoring.new create_anchoring_from_anchoring_params(f, anchoring_params)
-
-    puts @anchoring.inspect
     respond_to do |format|
-      format.html { render 'new'}
+      format.html { render 'new' }
       format.json { render json: @anchoring }
     end
   end

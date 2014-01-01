@@ -278,5 +278,6 @@ zh-CN:
 
   msg:
     update_password_success: "密码修改成功，请重新登录"
+    import_file_is_incorrect: "上传的文件不符合模板要求"
 
 

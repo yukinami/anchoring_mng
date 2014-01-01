@@ -2,6 +2,8 @@
 <h1><%= t('.new_anchoring') %></h1>
 <% end %>
 
+<p id="notice"><%= flash[:notice] %></p>
+
 <div class="form-group">
   <%= button_tag t('.import'), class: "btn btn-default" , :'data-toggle' => "modal", :'data-target' => "#importModal" %> 
 </div>
