@@ -39,7 +39,7 @@ gem 'jquery-rails'
 gem 'will_paginate-bootstrap'
 
 group :production do
-  gem 'mysql'
+  gem 'mysql2'
 end
 
 gem 'rails-i18n'
