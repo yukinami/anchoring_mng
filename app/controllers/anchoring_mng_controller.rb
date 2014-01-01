@@ -1,5 +1,6 @@
 class AnchoringMngController < ApplicationController
   skip_before_filter :authorize, only: :index
+
   def index
     @anchorings = Anchoring.where(:status => nil)
     @anchorings = @anchorings.paginate(:page => params[:page], :per_page => PER_PAGE)

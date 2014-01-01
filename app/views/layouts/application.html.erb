@@ -24,10 +24,10 @@
 	    <li <% if current_page?(root_path) %>class="active"<% end %> ><%= link_to t('.applies'), root_path %></li>
             <li <% if current_page?(index_anchorings_anchorage_grounds_path) %>class="active"<% end %> ><%= link_to t('.anchorage_ground'), index_anchorings_anchorage_grounds_path %></li>
 	    <li <% if current_page?(history_path) %>class="active"<% end %> ><%= link_to t('.history'), history_path %></li>
-	    <% if is_admin %>
-	    <li><%= link_to t('.users'), users_path %></li>
 	    <li><%= link_to t('.anchorings'), anchorings_path%></li>
 	    <li><%= link_to t('.anchorage_grounds'), anchorage_grounds_path %></li>
+	    <% if is_admin %>
+	    <li><%= link_to t('.users'), users_path %></li>
 	    <% end %>
           </ul>
           <ul class="nav navbar-nav navbar-right">

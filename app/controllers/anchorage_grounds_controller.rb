@@ -1,5 +1,5 @@
 class AnchorageGroundsController < ApplicationController
-  before_filter :admin_permission, except: :index_anchorings
+  #before_filter :admin_permission, except: :index_anchorings
 
   # GET /anchorage_grounds
   # GET /anchorage_grounds.json
