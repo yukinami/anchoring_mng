@@ -30,6 +30,7 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     builder (3.0.4)
+    closure-compiler (1.1.10)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -103,9 +104,6 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.37)
-    uglifier (2.1.0)
-      execjs (>= 0.3.0)
-      multi_json (~> 1.0, >= 1.0.2)
     will_paginate (3.0.5)
     will_paginate-bootstrap (1.0.0)
       will_paginate (>= 3.0.3)
@@ -114,6 +112,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  closure-compiler
   coffee-rails (~> 3.2.1)
   jquery-rails
   mysql2
@@ -122,5 +121,4 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   spreadsheet
   sqlite3
-  uglifier (>= 1.0.3)
   will_paginate-bootstrap
