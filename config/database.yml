@@ -25,6 +25,6 @@ production:
   database: anchoring
   pool: 5
   timeout: 5000
-  username: anchoring_user
-  password: anchoring_user
+  username: root 
+  password: root123
   host: localhost
